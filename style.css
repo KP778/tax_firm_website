@@ -43,3 +43,19 @@ footer {
   color: white;
   margin-top: 2rem;
 }
+
+.service {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px; /* spacing between services */
+}
+
+.service i {
+  font-size: 1.5rem;
+  margin-right: 12px; /* spacing between icon and text */
+  margin-top: 5px;
+}
+
+.service-text p {
+  margin: 4px 0 0 0;
+}
