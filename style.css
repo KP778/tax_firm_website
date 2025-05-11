@@ -66,3 +66,6 @@ footer {
 .icon-purple { color: #6f42c1; }
 .icon-orange { color: #fd7e14; }
 
+section {
+  display: none;
+}
