@@ -69,3 +69,37 @@ footer {
 section {
   display: none;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.main-header {
+  background-image: url('top-banner.png'); /* Replace with actual banner image filename */
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  position: relative;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  width: 100%;
+}
+
+.main-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.main-header p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+}
