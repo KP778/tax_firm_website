@@ -2,188 +2,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Firm Name - Tax & Accounting</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-AfMr+...snipped...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NP Tax and Accounting Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-  <script>
-  function showSection(id) {
-    const sections = document.querySelectorAll("section");
-    sections.forEach(section => {
-      section.style.display = "none";
-    });
-    document.getElementById(id).style.display = "block";
-  }
-
-  // Show Home section by default on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    showSection('home');
-  });
-</script>
-
-<body>
-  <header class="main-header">
-  </div>
-</header>
-
-  <nav>
-  <a href="#" onclick="showSection('home'); return false;">Home</a>
-  <a href="#" onclick="showSection('about'); return false;">About</a>
-  <a href="#" onclick="showSection('services'); return false;">Services</a>
-  <a href="#" onclick="showSection('contact'); return false;">Contact</a>
-</nav>
-
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-900 text-white p-4 shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">NP Tax and Accounting Services</h1>
+      <div class="space-x-4">
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <section id="home" style="padding: 2rem; background-color: #ffffff;">
-  <div style="max-width: 900px; margin: auto; text-align: center;">
-    <img src="Banner.png" alt="Tax and Accounting Banner" style="width: 100%; border-radius: 10px; margin-bottom: 2rem;" />
+  <!-- Hero Section -->
+  <section class="p-12 text-center bg-white">
+    <h2 class="text-3xl font-semibold mb-4">Expert Accounting Solutions for Your Small Business Success</h2>
+    <p class="max-w-2xl mx-auto text-lg">Serving dental professionals and small business owners with reliable tax planning, bookkeeping, and financial insights since 2013.</p>
+  </section>
 
-    <h2 style="color: #003366;">Welcome to NP Tax and Accounting Solutions</h2>
-    <h3 style="color: #0055a5;">Your Trusted Accounting Partner</h3>
+  <!-- Services Section -->
+  <section id="services" class="bg-gray-100 p-8">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl font-bold mb-6">Our Services</h3>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <li class="bg-white p-4 rounded shadow">Tax Preparation and Planning</li>
+        <li class="bg-white p-4 rounded shadow">Bookkeeping Services</li>
+        <li class="bg-white p-4 rounded shadow">Payroll Services</li>
+        <li class="bg-white p-4 rounded shadow">Business Consulting</li>
+      </ul>
+    </div>
+  </section>
 
-    <p style="font-size: 1.1rem; color: #333;">
-      We understand that navigating the financial landscape of your small business can be complex. 
-      Since 2013, NP Tax and Accounting Solutions, a CPA firm, has been dedicated to providing comprehensive 
-      and reliable accounting services to businesses of all types. Based right here in Somerset, New Jersey, 
-      we're committed to being more than just your accountants – we're your trusted advisors, 
-      helping you achieve your financial goals with clarity and confidence.
-    </p>
+  <!-- Contact / Consultation Form Section -->
+  <section id="contact" class="p-8 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <h3 class="text-2xl font-bold mb-4">Book a Free Consultation</h3>
+      <form name="contact" method="POST" data-netlify="true" class="space-y-4 bg-gray-50 p-6 rounded shadow">
+        <input type="hidden" name="form-name" value="contact">
+        <div>
+          <label class="block mb-1">Full Name</label>
+          <input type="text" name="name" required class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">Email</label>
+          <input type="email" name="email" required class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">Phone Number</label>
+          <input type="tel" name="phone" class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">Practice Name</label>
+          <input type="text" name="practice" class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">How can we help you?</label>
+          <textarea name="message" rows="4" class="w-full border p-2 rounded"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
 
-    <h4 style="margin-top: 2rem; color: #003366;">Empowering Your Business Through Expert Accounting Services</h4>
-
-    <ul style="text-align: left; font-size: 1.05rem; color: #333; line-height: 1.6;">
-      <li><strong>Comprehensive Bookkeeping:</strong> Ensuring your financial records are accurate and up-to-date.</li>
-      <li><strong>Strategic Tax Planning & Preparation:</strong> Minimizing your tax liabilities and ensuring compliance.</li>
-      <li><strong>Efficient Payroll Services:</strong> Streamlining your payroll process and managing compliance.</li>
-      <li><strong>Insightful Financial Statement Analysis:</strong> Providing you with a clear understanding of your business's performance.</li>
-      <li><strong>Proactive Business Consulting:</strong> Offering guidance to help you make informed financial decisions and grow.</li>
-    </ul>
-
-    <p style="font-size: 1.1rem; color: #333;">
-      At NP Tax and Accounting Solutions, we combine our expertise as CPAs with a personalized and proactive approach.
-      We take the time to understand your business, communicate clearly, and provide the support you need to thrive.
-    </p>
-
-    <h4 style="margin-top: 2rem; color: #0055a5;">Ready to Take Control of Your Business Finances?</h4>
-    <p style="font-size: 1.1rem;">Let's discuss your specific accounting needs and how our services can benefit your small business. We're here to help you succeed.</p>
-  </div>
-</section>
-
-
-  <section id="about" style="padding: 2rem; background-color: #f9f9f9;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h2>About Us</h2>
-    <h3>Trusted CPA Firm Partnering with Small Businesses for Success Since 2013</h3>
-    
-    <p>
-      <strong>Welcome!</strong> At <strong>NP Tax and Accounting Solutions</strong>, we understand that managing your business finances can be challenging. 
-      As a Certified Public Accountant (CPA) firm established in 2013, we've been dedicated to providing comprehensive and reliable accounting services to small businesses across various industries.
-      We're more than just number crunchers; we're your trusted partners, committed to helping you navigate the complexities of financial management and achieve your business goals.
-    </p>
-
-    <h4>Our Story</h4>
-    <p>
-      Founded in 2013, NP Tax and Accounting Solutions was established by a licensed CPA with a clear vision: 
-      to offer personalized and proactive accounting support that empowers small business owners. 
-      Recognizing the unique financial needs and challenges faced by entrepreneurs, we set out to create a firm that goes beyond basic bookkeeping. 
-      We believe in building strong relationships with our clients, taking the time to understand their individual circumstances, 
-      and providing tailored solutions that drive profitability and growth.
-    </p>
-
-    <h4>Our Approach</h4>
-    <p>As a CPA firm, we adhere to the highest ethical and professional standards. Our approach includes:</p>
-    <ul style="list-style-type: none; padding-left: 0;">
-      <li><strong>Understanding Your Business:</strong> We take the time to learn about your industry, operations, and goals.</li>
-      <li><strong>Clear Communication:</strong> We simplify complex financial information so you stay informed.</li>
-      <li><strong>Proactive Support:</strong> We anticipate challenges and offer forward-thinking solutions.</li>
-      <li><strong>Accuracy and Reliability:</strong> Our attention to detail ensures trustworthy financial reporting.</li>
-      <li><strong>Long-Term Relationships:</strong> We aim to be your trusted advisor for years to come.</li>
-    </ul>
-
-    <h4>Our Commitment to Small Businesses</h4>
-    <p>
-      Small businesses are the backbone of our community. Whether you're a startup or a growing company, 
-      we offer CPA-level expertise to help you optimize your financial strategies. We’ve worked with businesses of all kinds and industries, gaining valuable insight along the way.
-    </p>
-
-    <p>
-      <strong>Nilesh Patel, CPA</strong> and founder of NP Tax and Accounting Solutions, has been helping small businesses thrive for over 12 years. 
-      With deep knowledge of accounting, tax law, and a passion for entrepreneurship, he provides strategic financial guidance you can trust.
-    </p>
-
-    <h4>Ready to Partner with a CPA Firm?</h4>
-    <p>
-      We invite you to learn more about how NP Tax and Accounting Solutions can help your small business succeed. 
-      Contact us today to discuss your accounting needs.
-    </p>
-  </div>
-</section>
-
-  <section id="services">
-  <h2>Our Services</h2>
-
-  <div class="service">
-    <p><i class="fas fa-file-invoice-dollar icon-green"></i><span class="service-title">Tax Preparation & Planning</span></p>
-    <p>Accurate and timely tax return filing with personalized planning strategies.</p>
-  </div>
-
-  <div class="service">
-    <p><i class="fas fa-book icon-blue"></i><span class="service-title">Bookkeeping & Payroll</span></p>
-    <p>Organized bookkeeping, payroll processing, and reporting.</p>
-  </div>
-
-  <div class="service">
-    <p><i class="fas fa-chart-line icon-teal"></i><span class="service-title">Financial Consulting</span></p>
-    <p>Expert advice to help you make strategic, informed decisions.</p>
-  </div>
-
-  <div class="service">
-    <p><i class="fas fa-balance-scale icon-yellow"></i><span class="service-title">IRS Representation</span></p>
-    <p>We handle IRS audits, notices, and other correspondence on your behalf.</p>
-  </div>
-
-  <div class="service">
-    <p><i class="fas fa-building icon-purple"></i><span class="service-title">Business Entity Setup</span></p>
-    <p>LLC, S-corp, and C-corp formation with proper tax structuring.</p>
-  </div>
-
-  <div class="service">
-    <p><i class="fas fa-laptop icon-orange"></i><span class="service-title">QuickBooks Support</span></p>
-    <p>Setup, troubleshooting, and ongoing training for QuickBooks Online/Desktop.</p>
-  </div>
-</section>
-
-
-
-
-  <section id="contact" style="background-color: #f9f9f9; padding: 2rem;">
-  <div style="max-width: 800px; margin: auto;">
-    <h2>Contact Us</h2>
-
-    <p><i class="fas fa-envelope" style="color:#007bff;"></i> <strong>Email:</strong> <a href="mailto:nileshpatel@nptaxcpa.com">nileshpatel@nptaxcpa.com</a></p>
-    <p><i class="fas fa-map-marker-alt" style="color:#dc3545;"></i> <strong>Address:</strong> 220 Davidson Ave Ste 407G, Somerset, NJ 08873</p>
-    <p><i class="fas fa-clock" style="color:#ffc107;"></i> <strong>Hours:</strong> Monday – Friday: 9:00 AM – 5:00 PM EST</p>
-
-    <h3 style="margin-top: 2rem;">Find Us Here</h3>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.3484289831787!2d-74.5105146843153!3d40.53735397934844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3c778b6d897c7%3A0x9b6e0e601f281c57!2s220%20Davidson%20Ave%20%23407G%2C%20Somerset%2C%20NJ%2008873!5e0!3m2!1sen!2sus!4v1715452710000!5m2!1sen!2sus" 
-      width="100%" 
-      height="300" 
-      style="border:0; margin-top: 1rem;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-
-
-  <footer>
-    <p>&copy; 2025 Your Firm Name. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 NP Tax and Accounting Services</p>
   </footer>
 </body>
 </html>
