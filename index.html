@@ -7,49 +7,93 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <!-- Navigation Bar -->
-  <nav class="bg-blue-900 text-white p-4 shadow">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">NP Tax and Accounting Services</h1>
-      <div class="space-x-4">
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="p-12 text-center bg-white">
-    <h2 class="text-3xl font-semibold mb-4">Expert Accounting Solutions for Your Small Business Success</h2>
-    <p class="max-w-2xl mx-auto text-lg">Serving dental professionals and small business owners with reliable tax planning, bookkeeping, and financial insights since 2013.</p>
+  <!-- Hero Banner -->
+  <section class="bg-blue-900 text-white text-center py-16 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">Specialized Tax & Accounting for Dental Professionals</h1>
+      <p class="text-lg mb-6">Serving over 60+ dentists and small businesses with reliable financial expertise since 2013.</p>
+      <a href="#contact" class="bg-white text-blue-900 font-semibold py-2 px-4 rounded hover:bg-gray-100">Book a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="p-10 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">About NP Tax and Accounting Services</h2>
+      <p class="text-lg">We provide personalized tax, accounting, and financial planning services tailored to the needs of dental professionals and small businesses. Our team is committed to helping new dental practices thrive with the right financial strategy.</p>
+    </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="bg-gray-100 p-8">
-    <div class="max-w-5xl mx-auto">
-      <h3 class="text-2xl font-bold mb-6">Our Services</h3>
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <li class="bg-white p-4 rounded shadow">Tax Preparation and Planning</li>
-        <li class="bg-white p-4 rounded shadow">Bookkeeping Services</li>
-        <li class="bg-white p-4 rounded shadow">Payroll Services</li>
-        <li class="bg-white p-4 rounded shadow">Business Consulting</li>
+  <section class="bg-gray-100 p-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">Tax Preparation & Planning</h3>
+          <p>Ensure timely and optimized tax filing for your practice with dental-specific deductions.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">Bookkeeping Services</h3>
+          <p>Accurate, consistent record-keeping so you can focus on patient care.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">Payroll Management</h3>
+          <p>Reliable payroll solutions designed for small business owners and dental clinics.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">Dental Business Consulting</h3>
+          <p>Get expert advice on starting or scaling your dental practice financially and operationally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Dentists Trust Us Section -->
+  <section class="p-10 bg-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Why Dentists Trust Us</h2>
+      <ul class="text-left space-y-3 text-lg">
+        <li>✔️ 10+ Years of Experience in the Dental Industry</li>
+        <li>✔️ Over 60 Satisfied Dental Clients</li>
+        <li>✔️ Personalized, Friendly Support</li>
+        <li>✔️ Remote and In-Person Services</li>
       </ul>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="p-8 bg-white">
-    <div class="max-w-2xl mx-auto text-center">
-      <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
-      <p class="mb-2">📞 <strong>Phone:</strong> (732) 397-5784</p>
-      <p class="mb-2">📧 <strong>Email:</strong> contact@nptaxcpa.com</p>
-      <p>📍 <strong>Address:</strong> 220 Davidson Ave Ste 407G, Somerset, NJ 08873</p>
+  <!-- Contact Form Section -->
+  <section id="contact" class="p-10 bg-gray-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">Get in Touch</h2>
+      <form name="contact" method="POST" data-netlify="true" class="bg-white p-6 rounded shadow space-y-4">
+        <input type="hidden" name="form-name" value="contact">
+        <div>
+          <label class="block mb-1">Full Name</label>
+          <input type="text" name="name" required class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">Email</label>
+          <input type="email" name="email" required class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">Phone Number</label>
+          <input type="tel" name="phone" class="w-full border p-2 rounded">
+        </div>
+        <div>
+          <label class="block mb-1">Message</label>
+          <textarea name="message" rows="4" class="w-full border p-2 rounded"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800">Submit</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-4 mt-12">
-    <p>&copy; 2025 NP Tax and Accounting Services</p>
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 NP Tax and Accounting Services. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
