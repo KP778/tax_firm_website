@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NP Tax and Accounting Services</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .section-hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-white text-gray-800">
 
@@ -13,26 +18,26 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">NP Tax & Accounting</h1>
       <div class="space-x-6">
-        <a href="#hero" class="hover:text-yellow-300">Home</a>
-        <a href="#about" class="hover:text-yellow-300">About</a>
-        <a href="#services" class="hover:text-yellow-300">Services</a>
-        <a href="#why" class="hover:text-yellow-300">Why Us</a>
-        <a href="#contact" class="hover:text-yellow-300">Contact</a>
+        <button onclick="showSection('hero')" class="hover:text-yellow-300">Home</button>
+        <button onclick="showSection('about')" class="hover:text-yellow-300">About</button>
+        <button onclick="showSection('services')" class="hover:text-yellow-300">Services</button>
+        <button onclick="showSection('why')" class="hover:text-yellow-300">Why Us</button>
+        <button onclick="showSection('contact')" class="hover:text-yellow-300">Contact</button>
       </div>
     </div>
   </nav>
 
   <!-- Hero Banner -->
-  <section id="hero" class="bg-gradient-to-r from-blue-900 to-blue-600 text-white text-center py-20 px-6">
+  <section id="hero" class="section-visible bg-gradient-to-r from-blue-900 to-blue-600 text-white text-center py-20 px-6">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-4xl font-bold mb-4">Specialized Tax & Accounting for Dental Professionals</h1>
       <p class="text-lg mb-6">Serving over 60+ dentists and small businesses with reliable financial expertise since 2013.</p>
-      <a href="#contact" class="bg-yellow-400 text-blue-900 font-semibold py-2 px-5 rounded hover:bg-yellow-300">Book a Free Consultation</a>
+      <button onclick="showSection('contact')" class="bg-yellow-400 text-blue-900 font-semibold py-2 px-5 rounded hover:bg-yellow-300">Book a Free Consultation</button>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="p-10 bg-white">
+  <section id="about" class="section-hidden p-10 bg-white">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4 text-blue-800">About Us</h2>
       <p class="text-lg">We provide personalized tax, accounting, and financial planning services tailored to the needs of dental professionals and small businesses. Our team is committed to helping new dental practices thrive with the right financial strategy.</p>
@@ -40,7 +45,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="bg-blue-50 p-10">
+  <section id="services" class="section-hidden bg-blue-50 p-10">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -65,7 +70,7 @@
   </section>
 
   <!-- Why Dentists Trust Us Section -->
-  <section id="why" class="p-10 bg-white text-center">
+  <section id="why" class="section-hidden p-10 bg-white text-center">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-blue-800">Why Dentists Trust Us</h2>
       <ul class="text-left space-y-3 text-lg text-gray-700">
@@ -78,7 +83,7 @@
   </section>
 
   <!-- Contact Form Section -->
-  <section id="contact" class="p-10 bg-blue-50">
+  <section id="contact" class="section-hidden p-10 bg-blue-50">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Get in Touch</h2>
       <form name="contact" method="POST" data-netlify="true" class="bg-white p-6 rounded shadow-lg space-y-4">
@@ -108,5 +113,19 @@
   <footer class="bg-blue-900 text-white text-center py-4">
     <p>&copy; 2025 NP Tax and Accounting Services. All rights reserved.</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    function showSection(id) {
+      sections.forEach(section => {
+        section.classList.add('section-hidden');
+      });
+      document.getElementById(id).classList.remove('section-hidden');
+    }
+
+    // Show only hero section by default
+    showSection('hero');
+  </script>
 </body>
 </html>
