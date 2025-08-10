@@ -88,15 +88,89 @@
 
 
   <!-- About Section -->
-  <section id="about" class="section-hidden p-10 bg-white bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1603575448372-e492a08deab3?auto=format&fit=crop&w=1600&q=80');">
-    <div class="bg-white bg-opacity-90 max-w-4xl mx-auto text-center p-8 rounded shadow">
-      <h2 class="text-3xl font-bold mb-4 text-blue-800">About Us</h2>
-      <p class="text-lg mb-4">Founded in 2013, NP Tax and Accounting Services was established by a licensed CPA with a clear mission: to provide proactive and personalized financial support to small businesses — with a special focus on dental practices.</p>
-      <p class="text-lg mb-4">We’re more than just accountants — we’re financial partners who work alongside our clients to anticipate needs, deliver clear insights, and empower smarter decisions. We help dental practices navigate the complexities of tax laws, streamline their bookkeeping, and focus on delivering outstanding patient care.</p>
-      <p class="text-lg mb-4">Our work is built on ethics, accuracy, and relationships. From newly opened dental clinics to seasoned professionals, we customize every service to align with your long-term success.</p>
-      <p class="text-lg">Let NP Tax and Accounting be your partner in financial clarity and growth.</p>
+<section id="about" class="section-hidden">
+  <!-- background -->
+  <div class="bg-gradient-to-b from-white to-blue-50 py-14">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <!-- Left: Copy -->
+      <div>
+        <h2 class="text-3xl font-bold text-blue-800 mb-4">About NP Tax & Accounting</h2>
+        <p class="text-lg text-gray-800 mb-4">
+          Since <strong>2013</strong>, we’ve partnered with small businesses and
+          <strong>dental practices</strong> to bring clarity to their finances. Led by a licensed CPA,
+          we combine proactive planning with reliable execution—so you can focus on patient care while we
+          handle the numbers.
+        </p>
+        <p class="text-lg text-gray-800 mb-6">
+          Whether you’re launching a new clinic or optimizing an existing one, our approach is simple:
+          understand your goals, explain options clearly, and deliver timely, accurate work you can trust.
+        </p>
+
+        <!-- Values list -->
+        <ul class="space-y-3 text-gray-800">
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-700">✓</span>
+            <span><strong>CPA-led guidance</strong> with clear explanations—not jargon.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-700">✓</span>
+            <span><strong>Dentist-specific workflows</strong> for payroll, insurance write-offs, and equipment depreciation.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-700">✓</span>
+            <span><strong>Proactive planning</strong> so there are no surprises at quarter- or year-end.</span>
+          </li>
+        </ul>
+
+        <!-- Mini CTA -->
+        <div class="mt-8 flex gap-3">
+          <button onclick="showSection('services')" class="border border-blue-200 text-blue-800 px-5 py-2 rounded hover:bg-blue-100">
+            Explore Services
+          </button>
+          <button onclick="showSection('contact')" class="bg-blue-700 text-white px-5 py-2 rounded hover:bg-blue-800">
+            Book a Free Consult
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Visual cards -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
+          <div class="text-3xl font-extrabold text-blue-800">2013</div>
+          <div class="text-gray-600 mt-1">Founded</div>
+          <p class="text-sm text-gray-700 mt-4">
+            A decade of hands-on accounting for small businesses and healthcare.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
+          <div class="text-3xl font-extrabold text-blue-800">60+</div>
+          <div class="text-gray-600 mt-1">Dental Clients</div>
+          <p class="text-sm text-gray-700 mt-4">
+            Experience with startups, growing clinics, and multi-provider practices.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
+          <div class="text-3xl font-extrabold text-blue-800">CPA</div>
+          <div class="text-gray-600 mt-1">Leadership</div>
+          <p class="text-sm text-gray-700 mt-4">
+            Ethical, accurate, and compliant—guided by a licensed CPA.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
+          <div class="text-3xl font-extrabold text-blue-800">1:1</div>
+          <div class="text-gray-600 mt-1">Personalized Support</div>
+          <p class="text-sm text-gray-700 mt-4">
+            Clear answers, quick responses, and advice tailored to your goals.
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Services Section -->
   <section id="services" class="section-hidden bg-blue-50 p-10">
