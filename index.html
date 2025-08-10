@@ -18,7 +18,8 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">NP Tax & Accounting</h1>
       <div class="space-x-6">
-        <button onclick="showSection('hero')" class="hover:text-yellow-300">Home</button>
+        <!-- in the nav -->
+        <button onclick="showSection('home')" class="hover:text-yellow-300">Home</button>
         <button onclick="showSection('about')" class="hover:text-yellow-300">About</button>
         <button onclick="showSection('services')" class="hover:text-yellow-300">Services</button>
         <button onclick="showSection('why')" class="hover:text-yellow-300">Why Us</button>
@@ -27,22 +28,67 @@
     </div>
   </nav>
 
+  <!-- HOME (Hero + Trust + Outcomes) -->
+<section id="home" class="section-visible">
   <!-- Hero Banner -->
-<section id="hero" class="section-visible text-white text-center py-20 px-6 bg-cover bg-center" style="background-image: url('images/hero-banner.jpg');">
-  <div class="bg-blue-900 bg-opacity-75 max-w-3xl mx-auto p-8 rounded">
-    <h1 class="text-4xl font-bold mb-4">Accounting for Dental Practices — From Startup to Scale</h1>
-    <p class="text-lg mb-3">Since 2013, we’ve helped 60+ dentists cut costs, stay compliant, and grow profitably.</p>
-    <p class="text-md mb-6">Open a new practice with confidence or streamline an existing clinic with proactive tax planning, airtight bookkeeping, and clear financial insights.</p>
-    <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <button onclick="showSection('contact')" class="bg-yellow-400 text-blue-900 font-semibold py-2 px-5 rounded hover:bg-yellow-300">
-        Book Free Consult
-      </button>
-      <button onclick="showSection('services')" class="border border-yellow-300 text-white font-semibold py-2 px-5 rounded hover:bg-yellow-300 hover:text-blue-900">
-        See Dentist Services
-      </button>
+  <div class="relative text-white text-center py-20 px-6 bg-cover bg-center"
+       style="background-image: url('images/hero-banner.jpg');">
+    <!-- Overlay to hide baked-in text on the image -->
+    <div class="absolute inset-0 bg-blue-900 bg-opacity-80 backdrop-blur-sm"></div>
+
+    <!-- Foreground content -->
+    <div class="relative max-w-3xl mx-auto p-8">
+      <h1 class="text-4xl font-bold mb-4">Accounting for Dental Practices — From Startup to Scale</h1>
+      <p class="text-lg mb-3">Since 2013, we’ve helped 60+ dentists cut costs, stay compliant, and grow profitably.</p>
+      <p class="text-md mb-6">Open a new practice with confidence or streamline an existing clinic with proactive tax planning, airtight bookkeeping, and clear financial insights.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button onclick="showSection('contact')" class="bg-yellow-400 text-blue-900 font-semibold py-2 px-5 rounded hover:bg-yellow-300">
+          Book Free Consult
+        </button>
+        <button onclick="showSection('services')" class="border border-yellow-300 text-white font-semibold py-2 px-5 rounded hover:bg-yellow-300 hover:text-blue-900">
+          See Dentist Services
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Strip -->
+  <div class="bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-sm text-gray-700">
+      <div class="font-semibold">Since 2013</div>
+      <div class="font-semibold">60+ Dental Clients</div>
+      <div class="font-semibold">Startup-Friendly</div>
+      <div class="font-semibold">Secure &amp; Compliant</div>
+      <div class="font-semibold">NJ-Based CPA</div>
+    </div>
+  </div>
+
+  <!-- Dentist-Specific Outcomes -->
+  <div class="bg-blue-50">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Built for Dental Practices</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-5 rounded-lg shadow border-l-4 border-blue-400">
+          <h3 class="text-lg font-semibold mb-1">Equipment Depreciation</h3>
+          <p class="text-sm text-gray-700">Section 179 &amp; bonus depreciation guidance for chairs, X-ray units, and IT.</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow border-l-4 border-blue-400">
+          <h3 class="text-lg font-semibold mb-1">Hygienist &amp; Staff Payroll</h3>
+          <p class="text-sm text-gray-700">Correct classifications, overtime rules, and clean payroll runs.</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow border-l-4 border-blue-400">
+          <h3 class="text-lg font-semibold mb-1">Insurance Write-Off Tracking</h3>
+          <p class="text-sm text-gray-700">Match production, adjustments, and collections for accurate KPIs.</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow border-l-4 border-blue-400">
+          <h3 class="text-lg font-semibold mb-1">Quarterly Tax Planning</h3>
+          <p class="text-sm text-gray-700">Smart estimates and entity guidance to avoid surprises.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 
   <!-- Trust Strip -->
