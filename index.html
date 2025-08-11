@@ -27,8 +27,7 @@
   </nav>
 
   <!-- HOME (Hero + Trust + Outcomes) -->
-<section id="home" class="">
-  <!-- Hero -->
+<section id="home">
   <div class="text-white text-center py-20 px-6 bg-gradient-to-r from-blue-800 to-blue-600">
     <div class="max-w-3xl mx-auto p-0">
       <h1 class="text-4xl font-bold mb-4">Accounting for Dental Practices — From Startup to Scale</h1>
@@ -327,17 +326,29 @@
   </footer>
 
   <script>
+  function showSection(id) {
     const sections = document.querySelectorAll('section');
-
-    function showSection(id) {
-      sections.forEach(section => {
-        section.classList.add('section-hidden');
-      });
-      document.getElementById(id).classList.remove('section-hidden');
+    sections.forEach(s => s.classList.add('section-hidden'));
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.remove('section-hidden');
+      history.replaceState(null, '', '#' + id);
+    } else {
+      // Fallback if a bad id is passed
+      const home = document.getElementById('home');
+      if (home) {
+        home.classList.remove('section-hidden');
+        history.replaceState(null, '', '#home');
+      }
     }
+  }
 
-    // Show only hero section by default
-    showSection('hero');
-  </script>
+  // Show Home (or hash target) after DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const target = (location.hash || '').slice(1) || 'home';
+    showSection(target);
+  });
+</script>
+
 </body>
 </html>
