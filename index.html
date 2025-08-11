@@ -303,7 +303,7 @@
 
 
   <!-- Contact Form Section -->
-<section id="contact" class="section-hidden p-10 bg-blue-50" netlify>
+<section id="contact" class="section-hidden p-10 bg-blue-50", netlify>
   <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
     
     <!-- Left: Form (Netlify Forms) -->
@@ -313,7 +313,6 @@
             class="bg-white p-6 rounded shadow-lg space-y-4">
         <!-- Netlify form identity -->
         <input type="hidden" name="form-name" value="contact" />
-        <!-- (Optional) email subject in Netlify notifications -->
         <input type="hidden" name="subject" value="New Website Inquiry — NP Tax & Accounting" />
         <!-- Honeypot (spam trap) -->
         <p class="hidden">
@@ -329,12 +328,13 @@
           <input type="email" name="email" required class="w-full border p-2 rounded" />
         </div>
         <div>
+          <label class="block mb-1 font-semibold">Phone Number</label>
+          <input type="tel" name="phone" class="w-full border p-2 rounded" />
+        </div>
+        <div>
           <label class="block mb-1 font-semibold">Message</label>
           <textarea name="message" rows="4" class="w-full border p-2 rounded"></textarea>
         </div>
-
-        <!-- If you later enable reCAPTCHA on Netlify, uncomment the next line -->
-        <!-- <div data-netlify-recaptcha="true"></div> -->
 
         <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">
           Submit
@@ -356,12 +356,13 @@
       </div>
       <div>
         <h3 class="text-xl font-semibold text-blue-800">Business Hours</h3>
-        <p class="text-gray-700">Mon - Fri: 9:00 AM – 6:00 PM<br>Sat: 10:00 AM – 2:00 PM</p>
+        <p class="text-gray-700">Mon - Fri: 9:00 AM – 6:00 PM</p>
       </div>
     </div>
 
   </div>
 </section>
+
 
 
   <!-- Footer -->
