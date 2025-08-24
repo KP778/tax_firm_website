@@ -17,6 +17,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">NP Tax & Accounting</h1>
       <div class="space-x-6">
+        <button onclick="showSection('testimonials')" class="hover:text-yellow-300">Testimonials</button>
         <button onclick="showSection('home')" class="hover:text-yellow-300">Home</button>
         <button onclick="showSection('about')" class="hover:text-yellow-300">About</button>
         <button onclick="showSection('services')" class="hover:text-yellow-300">Services</button>
@@ -35,6 +36,21 @@
   </div>
 
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+<!-- Micro-quote CTA (Home) -->
+<div class="bg-white">
+  <div class="max-w-4xl mx-auto px-6 py-6 text-center">
+    <p class="text-xl text-gray-800 italic">
+      “With NP Tax and Accounting, the financial side finally feels effortless.”
+    </p>
+    <div class="mt-4">
+      <button onclick="showSection('testimonials')" 
+              class="inline-block bg-blue-700 text-white px-5 py-2 rounded hover:bg-blue-800">
+        Read Testimonials
+      </button>
+    </div>
+  </div>
+</div>
+
 
   <div class="relative text-center py-20 px-6 max-w-3xl mx-auto">
     <h1 class="text-4xl font-bold mb-4">Accounting for Dental Practices — From Startup to Scale</h1>
@@ -301,6 +317,74 @@
   </div>
 </section>
 
+<!-- Testimonials Section -->
+<section id="testimonials" class="section-hidden py-16 bg-gradient-to-b from-white to-blue-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-800">What Dentists Say</h2>
+    <p class="text-center text-gray-700 mt-2 mb-10">
+      Real experiences from practices supported by <span class="font-semibold">NP Tax and Accounting</span>.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="text-gray-800 italic">
+          “Opening a new practice came with so many moving parts. 
+          <span class="font-semibold">NP Tax and Accounting</span> handled entity setup and bookkeeping so accounting became the one thing I didn’t have to worry about. I could focus on patients, knowing my numbers were taken care of.”
+        </p>
+        <!-- Name & credentials (intentionally left empty; fill later) -->
+        <div class="mt-4">
+          <div class="font-semibold text-blue-800"></div>
+          <div class="text-sm text-gray-600"></div>
+        </div>
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="text-gray-800 italic">
+          “We’d been struggling with insurance write-offs and keeping records in order. 
+          Once <span class="font-semibold">NP Tax and Accounting</span> stepped in, the stress lifted. 
+          Our books were streamlined and I stopped second-guessing whether we were leaving money on the table.”
+        </p>
+        <!-- Name & credentials placeholders -->
+        <div class="mt-4">
+          <div class="font-semibold text-blue-800"></div>
+          <div class="text-sm text-gray-600"></div>
+        </div>
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="text-gray-800 italic">
+          “As our practice grew, payroll, equipment planning, and quarterly taxes got complex. 
+          <span class="font-semibold">NP Tax and Accounting</span> gave us clarity and peace of mind—now we make confident financial decisions without the late-night stress.”
+        </p>
+        <!-- Name & credentials placeholders -->
+        <div class="mt-4">
+          <div class="font-semibold text-blue-800"></div>
+          <div class="text-sm text-gray-600"></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA under testimonials -->
+    <div class="text-center mt-12">
+      <button onclick="showSection('contact')" 
+              class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">
+        Book a Free Consult
+      </button>
+    </div>
+  </div>
+</section>
 
   <!-- Contact Form Section -->
 <section id="contact" class="section-hidden p-10 bg-blue-50", netlify>
