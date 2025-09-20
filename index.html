@@ -316,7 +316,7 @@
   </div>
 </section>
 
-<!-- Testimonials Section (Carousel) -->
+<!-- Testimonials Section (Carousel with peek + counter) -->
 <section id="testimonials" class="section-hidden py-16 bg-gradient-to-b from-white to-blue-50">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-800">What Dentists Say About Us</h2>
@@ -324,13 +324,15 @@
       Real experiences from practices supported by <span class="font-semibold">NP Tax and Accounting</span>.
     </p>
 
-    <div id="ts-carousel" class="relative group">
-      <div class="overflow-hidden rounded-2xl">
-        <div class="flex transition-transform duration-500 ease-out" data-ts-track>
+    <div id="ts-carousel" class="relative">
+      <!-- Viewport (padding lets the next slide “peek”) -->
+      <div class="overflow-hidden rounded-2xl px-4">
+        <!-- Track -->
+        <div class="flex gap-6 transition-transform duration-500 ease-out" data-ts-track>
 
           <!-- Slide 1: Niki Jayswal -->
-          <article class="shrink-0 basis-full px-1">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl mx-auto">
+          <article class="shrink-0 w-[90%] md:w-[70%] max-w-3xl">
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
               <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
@@ -344,8 +346,8 @@
           </article>
 
           <!-- Slide 2: Bansi Patel -->
-          <article class="shrink-0 basis-full px-1">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl mx-auto">
+          <article class="shrink-0 w-[90%] md:w-[70%] max-w-3xl">
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
               <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
@@ -360,8 +362,8 @@
           </article>
 
           <!-- Slide 3: Mansi Mehta -->
-          <article class="shrink-0 basis-full px-1">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl mx-auto">
+          <article class="shrink-0 w-[90%] md:w-[70%] max-w-3xl">
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
               <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
@@ -376,8 +378,8 @@
           </article>
 
           <!-- Slide 4: Radhika Shah -->
-          <article class="shrink-0 basis-full px-1">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl mx-auto">
+          <article class="shrink-0 w-[90%] md:w-[70%] max-w-3xl">
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
               <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
@@ -393,16 +395,25 @@
         </div>
       </div>
 
-      <!-- Controls -->
-      <button type="button" class="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow"
+      <!-- Controls (always visible) -->
+      <button type="button"
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow"
               aria-label="Previous testimonial" data-ts-prev>‹</button>
-      <button type="button" class="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow"
+      <button type="button"
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow"
               aria-label="Next testimonial" data-ts-next>›</button>
 
-      <!-- Dots -->
-      <div class="mt-6 flex justify-center gap-2" data-ts-dots></div>
+      <!-- Dots + Counter -->
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <div class="flex gap-2" data-ts-dots></div>
+        <span class="text-sm text-gray-600" data-ts-counter>1 / 4</span>
+      </div>
+
+      <!-- Hint -->
+      <p class="text-center text-xs text-gray-500 mt-2">Swipe or use arrows to see more</p>
     </div>
 
+    <!-- CTA -->
     <div class="text-center mt-10">
       <button onclick="showSection('contact')" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">
         Book a Free Consult
@@ -410,6 +421,7 @@
     </div>
   </div>
 </section>
+
 
 
   <!-- Contact Form Section -->
@@ -498,12 +510,13 @@
     }
   }
 
+ <script>
+  // ... keep your showSection() + DOMContentLoaded wrapper ...
   document.addEventListener('DOMContentLoaded', () => {
-    // Initial route
     const target = (location.hash || '').slice(1) || 'home';
     showSection(target);
 
-    // ---- Testimonials Carousel (no libraries) ----
+    // ----- Testimonials Carousel -----
     const root = document.getElementById('ts-carousel');
     if (!root) return;
 
@@ -512,6 +525,7 @@
     const prevBtn = root.querySelector('[data-ts-prev]');
     const nextBtn = root.querySelector('[data-ts-next]');
     const dotsWrap = root.querySelector('[data-ts-dots]');
+    const counter = root.querySelector('[data-ts-counter]');
 
     let index = 0;
     let timer = null;
@@ -521,44 +535,54 @@
     slides.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.type = 'button';
-      dot.className =
-        'h-2.5 w-2.5 rounded-full bg-gray-300 hover:bg-blue-400 focus:ring-2 focus:ring-blue-300';
+      dot.className = 'h-2.5 w-2.5 rounded-full bg-gray-300 hover:bg-blue-400 focus:ring-2 focus:ring-blue-300';
       dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
       dot.addEventListener('click', () => go(i));
       dotsWrap.appendChild(dot);
     });
 
+    function slideOffsetPx(i) {
+      // Translate by the exact pixel offset to the i-th slide (supports “peek” widths & gaps)
+      const firstLeft = slides[0].offsetLeft;
+      return slides[i].offsetLeft - firstLeft;
+    }
+
     function update() {
-      track.style.transform = `translateX(${-index * 100}%)`;
+      const x = slideOffsetPx(index);
+      track.style.transform = `translateX(-${x}px)`;
+
       Array.from(dotsWrap.children).forEach((d, i) => {
         d.className =
           'h-2.5 w-2.5 rounded-full ' +
           (i === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-blue-400') +
           ' focus:ring-2 focus:ring-blue-300';
       });
+
+      if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
     }
 
     function go(i) { index = (i + slides.length) % slides.length; update(); restartAuto(); }
     function next() { go(index + 1); }
     function prev() { go(index - 1); }
 
-    function startAuto() { timer = setInterval(next, 6000); }
+    function startAuto() { timer = setInterval(next, 6000); }  // 6 seconds
     function stopAuto() { if (timer) clearInterval(timer); timer = null; }
     function restartAuto() { stopAuto(); startAuto(); }
 
-    if (prevBtn) prevBtn.addEventListener('click', prev);
-    if (nextBtn) nextBtn.addEventListener('click', next);
-
+    prevBtn?.addEventListener('click', prev);
+    nextBtn?.addEventListener('click', next);
     root.addEventListener('mouseenter', stopAuto);
     root.addEventListener('mouseleave', startAuto);
     root.addEventListener('focusin', stopAuto);
     root.addEventListener('focusout', startAuto);
+    window.addEventListener('resize', update);
 
+    // Init
     update();
     startAuto();
-    window.addEventListener('resize', update);
   });
 </script>
+
 
 
 
