@@ -316,9 +316,7 @@
   </div>
 </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="section-hidden py-16 bg-gradient-to-b from-white to-blue-50">
-  <!-- Testimonials Section (Carousel) -->
+<!-- Testimonials Section (Carousel) -->
 <section id="testimonials" class="section-hidden py-16 bg-gradient-to-b from-white to-blue-50">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-800">What Dentists Say About Us</h2>
@@ -326,13 +324,10 @@
       Real experiences from practices supported by <span class="font-semibold">NP Tax and Accounting</span>.
     </p>
 
-    <!-- Carousel -->
     <div id="ts-carousel" class="relative group">
-      <!-- Slides viewport -->
       <div class="overflow-hidden rounded-2xl">
-        <!-- Track -->
         <div class="flex transition-transform duration-500 ease-out" data-ts-track>
-          
+
           <!-- Slide 1: Niki Jayswal -->
           <article class="shrink-0 basis-full px-1">
             <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl mx-auto">
@@ -364,7 +359,7 @@
             </div>
           </article>
 
-          <!-- Slide 3: Mansi Mehta (edited) -->
+          <!-- Slide 3: Mansi Mehta -->
           <article class="shrink-0 basis-full px-1">
             <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl mx-auto">
               <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
@@ -405,12 +400,9 @@
               aria-label="Next testimonial" data-ts-next>›</button>
 
       <!-- Dots -->
-      <div class="mt-6 flex justify-center gap-2" data-ts-dots>
-        <!-- dots are injected by JS -->
-      </div>
+      <div class="mt-6 flex justify-center gap-2" data-ts-dots></div>
     </div>
 
-    <!-- CTA -->
     <div class="text-center mt-10">
       <button onclick="showSection('contact')" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">
         Book a Free Consult
@@ -419,8 +411,9 @@
   </div>
 </section>
 
+
   <!-- Contact Form Section -->
-<section id="contact" class="section-hidden p-10 bg-blue-50", netlify>
+<section id="contact" class="section-hidden p-10 bg-blue-50">
   <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
     
     <!-- Left: Form (Netlify Forms) -->
@@ -488,6 +481,7 @@
   </footer>
 
   <script>
+  // Show/hide sections by id and update URL hash
   function showSection(id) {
     const sections = document.querySelectorAll('section');
     sections.forEach(s => s.classList.add('section-hidden'));
@@ -496,7 +490,6 @@
       el.classList.remove('section-hidden');
       history.replaceState(null, '', '#' + id);
     } else {
-      // Fallback if a bad id is passed
       const home = document.getElementById('home');
       if (home) {
         home.classList.remove('section-hidden');
@@ -505,13 +498,12 @@
     }
   }
 
-  // Show Home (or hash target) after DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
+    // Initial route
     const target = (location.hash || '').slice(1) || 'home';
     showSection(target);
-    <script>
-  // ---- Testimonials Carousel (no libraries) ----
-  document.addEventListener('DOMContentLoaded', () => {
+
+    // ---- Testimonials Carousel (no libraries) ----
     const root = document.getElementById('ts-carousel');
     if (!root) return;
 
@@ -537,8 +529,7 @@
     });
 
     function update() {
-      const offset = -index * 100;
-      track.style.transform = `translateX(${offset}%)`;
+      track.style.transform = `translateX(${-index * 100}%)`;
       Array.from(dotsWrap.children).forEach((d, i) => {
         d.className =
           'h-2.5 w-2.5 rounded-full ' +
@@ -547,45 +538,29 @@
       });
     }
 
-    function go(i) {
-      index = (i + slides.length) % slides.length;
-      update();
-      restartAuto();
-    }
-
+    function go(i) { index = (i + slides.length) % slides.length; update(); restartAuto(); }
     function next() { go(index + 1); }
     function prev() { go(index - 1); }
 
-    function startAuto() {
-      timer = setInterval(next, 6000); // 6s
-    }
-    function stopAuto() {
-      if (timer) clearInterval(timer);
-      timer = null;
-    }
+    function startAuto() { timer = setInterval(next, 6000); }
+    function stopAuto() { if (timer) clearInterval(timer); timer = null; }
     function restartAuto() { stopAuto(); startAuto(); }
 
-    // Listeners
     if (prevBtn) prevBtn.addEventListener('click', prev);
     if (nextBtn) nextBtn.addEventListener('click', next);
 
-    // Pause on hover/focus inside carousel
     root.addEventListener('mouseenter', stopAuto);
     root.addEventListener('mouseleave', startAuto);
     root.addEventListener('focusin', stopAuto);
     root.addEventListener('focusout', startAuto);
 
-    // Init
     update();
     startAuto();
-
-    // Adjust on resize (keeps transform in % so it’s naturally responsive)
     window.addEventListener('resize', update);
   });
 </script>
 
-  });
-</script>
+
 
 </body>
 </html>
