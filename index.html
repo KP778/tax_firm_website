@@ -461,29 +461,7 @@
     <p>&copy; 2025 NP Tax and Accounting Services. All rights reserved.</p>
   </footer>
 
-  <script>
-  // Show/hide sections by id and update URL hash
-  function showSection(id) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(s => s.classList.add('section-hidden'));
-    const el = document.getElementById(id);
-    if (el) {
-      el.classList.remove('section-hidden');
-      history.replaceState(null, '', '#' + id);
-    } else {
-      const home = document.getElementById('home');
-      if (home) {
-        home.classList.remove('section-hidden');
-        history.replaceState(null, '', '#home');
-      }
-    }
-  }
-
-  // ... keep your showSection() + DOMContentLoaded wrapper ...
-  document.addEventListener('DOMContentLoaded', () => {
-    const target = (location.hash || '').slice(1) || 'home';
-    showSection(target);
-</script>
+  
 
 
 
