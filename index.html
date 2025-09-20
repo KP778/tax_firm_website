@@ -316,100 +316,68 @@
   </div>
 </section>
 
-<!-- Testimonials (1 per slide, manual, centered) -->
+<!-- Testimonials (static, no carousel) -->
 <section id="testimonials" class="section-hidden py-16 bg-gradient-to-b from-white to-blue-50">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-800">What Dentists Say About Us</h2>
-    <p class="text-center text-gray-700 mt-2 mb-8">
+    <p class="text-center text-gray-700 mt-2 mb-10">
       Real experiences from practices supported by <span class="font-semibold">NP Tax and Accounting</span>.
     </p>
 
-    <div id="ts-carousel" class="relative">
-      <!-- Viewport (hides everything except the current slide) -->
-      <div class="overflow-hidden rounded-2xl">
-        <!-- Track: width is multiple of slides; no horizontal gap -->
-        <div class="flex transition-transform duration-500 ease-out w-full" data-ts-track>
-
-          <!-- Slide 1 -->
-          <article class="shrink-0 basis-full flex justify-center">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl w-full mx-4">
-              <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <p class="text-gray-800 italic">
-                “Partnering with <span class="font-semibold">NP Tax and Accounting</span> has been a game-changer for my practice.
-                Their proactive tax planning and clear guidance gave me peace of mind to focus on patients while knowing the finances were in order.”
-              </p>
-              <div class="mt-4 text-blue-800 font-semibold">— Niki Jayswal</div>
-              <div class="text-sm text-gray-600">Nexus Dental of Lewisville, Texas</div>
-            </div>
-          </article>
-
-          <!-- Slide 2 -->
-          <article class="shrink-0 basis-full flex justify-center">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl w-full mx-4">
-              <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <p class="text-gray-800 italic">
-                “Growing our practice meant more staff, new equipment, and tighter cash flow.
-                <span class="font-semibold">NP Tax and Accounting</span> put everything on rails—payroll, quarterly planning, and a budget that tells me what’s coming next.
-                It’s steady, predictable, and the financial side finally feels effortless.”
-              </p>
-              <div class="mt-4 text-blue-800 font-semibold">— Bansi Patel</div>
-              <div class="text-sm text-gray-600">Monalisa Dental, Hills Borough, New Jersey</div>
-            </div>
-          </article>
-
-          <!-- Slide 3 -->
-          <article class="shrink-0 basis-full flex justify-center">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl w-full mx-4">
-              <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <p class="text-gray-800 italic">
-                “Switching to <span class="font-semibold">NP Tax and Accounting</span> was a breath of fresh air.
-                They cleaned up our books, set up a simple monthly close, and gave me clear reports I actually use.
-                The small billing surprises and write-off guesswork disappeared, and I spend far less time chasing numbers and more time with patients.”
-              </p>
-              <div class="mt-4 text-blue-800 font-semibold">— Mansi Mehta</div>
-              <div class="text-sm text-gray-600">Smiles of North Lake, Illinois</div>
-            </div>
-          </article>
-
-          <!-- Slide 4 -->
-          <article class="shrink-0 basis-full flex justify-center">
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 max-w-3xl w-full mx-4">
-              <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <p class="text-gray-800 italic">
-                “<span class="font-semibold">NP Tax and Accounting</span> has been integral in helping us simplify the entire accounting process.
-                From compliance to tax planning, they make it all seamless so my focus stays on patients, not paperwork.”
-              </p>
-              <div class="mt-4 text-blue-800 font-semibold">— Radhika Shah</div>
-              <div class="text-sm text-gray-600">Charm Dental, Spring, Texas</div>
-            </div>
-          </article>
-
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Niki Jayswal -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-      </div>
+        <p class="text-gray-800 italic">
+          “Partnering with <span class="font-semibold">NP Tax and Accounting</span> has been a game-changer for my practice.
+          Their proactive tax planning and clear guidance gave me peace of mind to focus on patients while knowing the finances were in order.”
+        </p>
+        <div class="mt-4 text-blue-800 font-semibold">— Niki Jayswal</div>
+        <div class="text-sm text-gray-600">Nexus Dental of Lewisville, Texas</div>
+      </article>
 
-      <!-- Always-visible arrows -->
-      <button type="button"
-              class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-blue-700 text-white hover:bg-blue-800 rounded-full h-10 w-10 flex items-center justify-center shadow"
-              aria-label="Previous testimonial" data-ts-prev>‹</button>
-      <button type="button"
-              class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-blue-700 text-white hover:bg-blue-800 rounded-full h-10 w-10 flex items-center justify-center shadow"
-              aria-label="Next testimonial" data-ts-next>›</button>
+      <!-- Bansi Patel -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="text-gray-800 italic">
+          “Growing our practice meant more staff, new equipment, and tighter cash flow.
+          <span class="font-semibold">NP Tax and Accounting</span> put everything on rails—payroll, quarterly planning, and a budget that tells me what’s coming next.
+          It’s steady, predictable, and the financial side finally feels effortless.”
+        </p>
+        <div class="mt-4 text-blue-800 font-semibold">— Bansi Patel</div>
+        <div class="text-sm text-gray-600">Monalisa Dental, Hills Borough, New Jersey</div>
+      </article>
 
-      <!-- Dots + counter -->
-      <div class="mt-6 flex items-center justify-center gap-3">
-        <div class="flex gap-2" data-ts-dots></div>
-        <span class="text-sm text-gray-600" data-ts-counter>1 / 4</span>
-      </div>
+      <!-- Mansi Mehta -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="text-gray-800 italic">
+          “Switching to <span class="font-semibold">NP Tax and Accounting</span> was a breath of fresh air.
+          They cleaned up our books, set up a simple monthly close, and gave me clear reports I actually use.
+          The small billing surprises and write-off guesswork disappeared, and I spend far less time chasing numbers and more time with patients.”
+        </p>
+        <div class="mt-4 text-blue-800 font-semibold">— Mansi Mehta</div>
+        <div class="text-sm text-gray-600">Smiles of North Lake, Illinois</div>
+      </article>
 
-      <p class="text-center text-xs text-gray-500 mt-2">Swipe or use arrows to see more</p>
+      <!-- Radhika Shah -->
+      <article class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
+        <div class="flex items-center gap-1 text-yellow-500 mb-3" aria-label="5 star rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="text-gray-800 italic">
+          “<span class="font-semibold">NP Tax and Accounting</span> has been integral in helping us simplify the entire accounting process.
+          From compliance to tax planning, they make it all seamless so my focus stays on patients, not paperwork.”
+        </p>
+        <div class="mt-4 text-blue-800 font-semibold">— Radhika Shah</div>
+        <div class="text-sm text-gray-600">Charm Dental, Spring, Texas</div>
+      </article>
     </div>
 
     <div class="text-center mt-10">
@@ -420,6 +388,8 @@
   </div>
 </section>
 
+
+   
 
 
 
@@ -513,60 +483,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     const target = (location.hash || '').slice(1) || 'home';
     showSection(target);
-
-    // --- Testimonials: 1 per slide, manual ---
-    const root = document.getElementById('ts-carousel');
-    if (!root) return;
-
-    const track   = root.querySelector('[data-ts-track]');
-    const slides  = Array.from(track.children);
-    const prevBtn = root.querySelector('[data-ts-prev]');
-    const nextBtn = root.querySelector('[data-ts-next]');
-    const dots    = root.querySelector('[data-ts-dots]');
-    const counter = root.querySelector('[data-ts-counter]');
-
-    let index = 0;
-
-    // build dots
-    dots.innerHTML = '';
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'h-2.5 w-2.5 rounded-full bg-gray-300 hover:bg-blue-400 focus:ring-2 focus:ring-blue-300';
-      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-      dot.addEventListener('click', () => go(i));
-      dots.appendChild(dot);
-    });
-
-    function update() {
-      // each slide is 100% width, so translate by multiples of 100%
-      track.style.transform = `translateX(-${index * 100}%)`;
-      Array.from(dots.children).forEach((d, i) => {
-        d.className =
-          'h-2.5 w-2.5 rounded-full ' +
-          (i === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-blue-400') +
-          ' focus:ring-2 focus:ring-blue-300';
-      });
-      if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
-    }
-
-    function go(i)   { index = (i + slides.length) % slides.length; update(); }
-    function next()  { go(index + 1); }
-    function prev()  { go(index - 1); }
-
-    prevBtn?.addEventListener('click', prev);
-    nextBtn?.addEventListener('click', next);
-    window.addEventListener('resize', update);
-
-    // keyboard support
-    root.setAttribute('tabindex', '0');
-    root.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  prev();
-      if (e.key === 'ArrowRight') next();
-    });
-
-    update();
-  });
 </script>
 
 
