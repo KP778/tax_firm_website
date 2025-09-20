@@ -316,7 +316,7 @@
   </div>
 </section>
 
-<!-- Testimonials Section (Carousel with peek + counter) -->
+<!-- Testimonials Section (Manual carousel, 1 per slide, visible arrows) -->
 <section id="testimonials" class="section-hidden py-16 bg-gradient-to-b from-white to-blue-50">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-800">What Dentists Say About Us</h2>
@@ -395,13 +395,17 @@
         </div>
       </div>
 
-      <!-- Controls (always visible) -->
+      <!-- Controls (always visible + high contrast) -->
       <button type="button"
-              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow"
-              aria-label="Previous testimonial" data-ts-prev>‹</button>
+              class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-blue-700 text-white hover:bg-blue-800 rounded-full h-10 w-10 flex items-center justify-center shadow"
+              aria-label="Previous testimonial" data-ts-prev>
+        ‹
+      </button>
       <button type="button"
-              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow"
-              aria-label="Next testimonial" data-ts-next>›</button>
+              class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-blue-700 text-white hover:bg-blue-800 rounded-full h-10 w-10 flex items-center justify-center shadow"
+              aria-label="Next testimonial" data-ts-next>
+        ›
+      </button>
 
       <!-- Dots + Counter -->
       <div class="mt-6 flex items-center justify-center gap-3">
@@ -421,6 +425,7 @@
     </div>
   </div>
 </section>
+
 
 
 
@@ -512,10 +517,11 @@
 
   // ... keep your showSection() + DOMContentLoaded wrapper ...
   document.addEventListener('DOMContentLoaded', () => {
+    // keep your existing routing init:
     const target = (location.hash || '').slice(1) || 'home';
     showSection(target);
 
-    // ----- Testimonials Carousel -----
+    // ----- Testimonials Carousel (manual, 1 per slide) -----
     const root = document.getElementById('ts-carousel');
     if (!root) return;
 
@@ -527,7 +533,6 @@
     const counter = root.querySelector('[data-ts-counter]');
 
     let index = 0;
-    let timer = null;
 
     // Build dots
     dotsWrap.innerHTML = '';
@@ -541,7 +546,7 @@
     });
 
     function slideOffsetPx(i) {
-      // Translate by the exact pixel offset to the i-th slide (supports “peek” widths & gaps)
+      // Translate to exact pixel position of slide i (supports “peek” widths & gaps)
       const firstLeft = slides[0].offsetLeft;
       return slides[i].offsetLeft - firstLeft;
     }
@@ -549,38 +554,35 @@
     function update() {
       const x = slideOffsetPx(index);
       track.style.transform = `translateX(-${x}px)`;
-
       Array.from(dotsWrap.children).forEach((d, i) => {
         d.className =
           'h-2.5 w-2.5 rounded-full ' +
           (i === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-blue-400') +
           ' focus:ring-2 focus:ring-blue-300';
       });
-
       if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
     }
 
-    function go(i) { index = (i + slides.length) % slides.length; update(); restartAuto(); }
+    function go(i) { index = (i + slides.length) % slides.length; update(); }
     function next() { go(index + 1); }
     function prev() { go(index - 1); }
 
-    function startAuto() { timer = setInterval(next, 6000); }  // 6 seconds
-    function stopAuto() { if (timer) clearInterval(timer); timer = null; }
-    function restartAuto() { stopAuto(); startAuto(); }
-
     prevBtn?.addEventListener('click', prev);
     nextBtn?.addEventListener('click', next);
-    root.addEventListener('mouseenter', stopAuto);
-    root.addEventListener('mouseleave', startAuto);
-    root.addEventListener('focusin', stopAuto);
-    root.addEventListener('focusout', startAuto);
     window.addEventListener('resize', update);
+
+    // Optional: keyboard arrows for accessibility
+    root.setAttribute('tabindex', '0');
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    });
 
     // Init
     update();
-    startAuto();
   });
 </script>
+
 
 
 
